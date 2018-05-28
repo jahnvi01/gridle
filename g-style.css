@@ -3,17 +3,22 @@
     width: 100%;
     padding: 20px 40px 20px 40px;
 position: fixed;
-background-color: #fff;
+background-color:#fff;
 z-index: 900;
 
   }
+body{
+  overflow-x: hidden;
+}
  .nav-list ul{
       display: flex;
       flex-direction: row;
       float: right;
-      margin-top:-30px;
-      margin-right: 10px;
-      
+   
+      margin-top:0px;
+     position: absolute;
+     top:10px;
+     right:0px;
   }
  .nav-list li{
       list-style: none;
@@ -21,22 +26,25 @@ z-index: 900;
       font-weight: 700;
             
   }
-  .nav-list li:after{
+  .visible:after{
     content: "|";
 margin-left: 10px;
   } 
-  .nav-list li button{
+  .nav-list button{
+
     padding: 3px 15px;
     border-radius: 18px;
-    transition: all 0.3s ease-in-out;
     border: 1px solid #fff; 
     background-color: #32B67A;
     border-color: #32B67A;
     color: #fff;
   }
 
+
+ 
+ 
   .heading h1{
-  
+  margin-top: 90px;
     font-size: 36px;
     font-weight: 700;
     letter-spacing: 0.01em;
@@ -51,16 +59,15 @@ margin-left: 10px;
     margin-bottom: 30px;
       }
   
-.features span{
+.features span,i{
   margin-right: 10px;
 }
 .features a{
   font-family: "Lato",sans-serif;
   font-size: 16px;
-  margin-left: 15px;
+ 
   margin-right: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color:#555;
   display: inline-flex;
   
@@ -68,7 +75,7 @@ margin-left: 10px;
 
 .features{
  text-align: center;  
-margin-top: 20px;
+margin-top: 15px;
 }
 .info{
  
@@ -79,25 +86,31 @@ padding:60px 20px;
 
 .info img{
   margin-top: 0px;
+
 }
-
-
-
-
+.animation{
+  visibility: visible;
+  animation-delay: 1s;
+  animation-name: toolsAnimation;
+}
 .para{
 cursor: pointer;
 padding: 10px 30px;
 text-align:left;
 border-radius: 10px;
 margin-bottom:0px ;
-
+padding-bottom: 20px;
 }
 #para1{
 
   background-color:#f5f5f5;
 }
 
-
+.row.info h2{
+  font-size: 22px;
+    font-weight: 900;
+    color: #555;
+}
 
   h2 {
     display: block;
@@ -107,16 +120,27 @@ margin-bottom:0px ;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     font-weight: bold;
-
 }
 .row.more-info{
 text-align: center;
 
 }
-.more-info p{
-  padding-top:5px ;
-}
 
+.OverlayIcon {
+  position: absolute;
+  top:40%;
+  left:45%;
+ width: 10%;
+ height: 10%;
+}
+.row.more-info h1,.row.content h1{
+  font-size: 36px;
+    font-weight: 900;
+    margin-top: 36px;
+    margin-bottom: 26px;
+    letter-spacing: 0.01em;
+    color: #555;
+}
 .icons img{
   margin-left:auto;
  
@@ -132,7 +156,8 @@ text-align: center;
 .sub-part p{
   width:200px;
   margin-left:auto;
- 
+  padding:9px ;
+  font-size: 15px;
   margin-right:auto;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -141,48 +166,136 @@ text-align: center;
 .sub-part{
   display: flex;
   flex-direction: column;
-padding:10px ;
-}
-.content{
-  text-align: center;
+
 }
 
+.sub-part h3{
+
+  font-size: 1.17em;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Lato",sans-serif;
+    color: #555;
+}
 .row.content{
 margin-top: 70px;
 text-align: center;
 
   margin-right: auto;
   margin-left: auto;
+ 
+ 
+ width: 80%; 
 
-width: 80%;
-padding: 20px;
-border: 1px solid #ddd;
 }
-
+.btn.btn-success{
+  background-color: #32B67A;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  
+}
+.btn{
+  font-weight: 700;
+  padding: 12px 18px;
+  min-width: 150px;
+}
 .row.footer{
   margin-top: 70px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 50px;
+
+ 
 }
 .heading a,.heading span{
   margin: 10px;
 }
+
 .row.footer ul{
   list-style:none; 
 }
+.col-xs-12{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .row.footer li{
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 13px;
- 
+
     line-height: 28px;
     color: #949494;
 }
-
 .row.footer h4{
-  margin-top: 30px;
+  margin-top: 18px;
+  font-weight:bold;
+  font-family: "Lato",sans-serif;
+  color: #555;
+  font-style: 14px;
 }
+
+.message i{
+font-size: 20px;
+background:#31a8e6;
+padding: 6px;
+position: fixed;
+ color:white;
+ float: right;
+
+}
+  .message{
+    position: absolute;
+ top: 93%; 
+
+    left:85%;
+z-index: 33;
+ display: flex;
+ padding: 12px;
+ flex-direction: row;
+} 
+.message span{
+ position: fixed;
+  color: white;
+padding: 6px;
+float: right;
+  background-color:#31a8e6; 
+  width: 15%;
+
+
+}
+.message span:hover{
+  cursor: pointer;
+
+}
+.fa.fa-twitter,.fa.fa-facebook,.fa.fa-linkedin{
+  color:#555;
+  background: white;
+  border:2px solid #555;
+  border-radius: 50%;
+  padding:5%;
+float: right;
+}
+.row.media{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.social{
+  width: 10%;
+ 
+margin-left: auto;
+margin-right: auto;
+}
+.row.media a{
+  margin-top:30px;
+margin-left: 5%;
+  margin-bottom: 70px;
+  align-self: auto;
+}
+
 
 
 @media screen and (max-width:800px)
@@ -190,25 +303,32 @@ border: 1px solid #ddd;
 .heading h1{
 text-align: center;
 font-size: 24px !important;
-/*width:90%;*/
+
 }
-.col-md-7 img{
+.image{
 width:90%;
+margin-top: 8%;
 height:60%;
 }
-.col-md-6 img{
+
+.animation{
   width: 80%;
   height: 70%;
+  margin-top: 8%;
+ margin-left:10%;
+ margin-right: 10%;  
 }
 
-
+.row.content h1{
+  font-size: 24px !important;
+}
 .visible, .nav-list li:after{
   visibility: hidden;
 }
 
 li button{
   position: absolute;
-  left:90%;
+ right:-7%;
  
 }
 
@@ -221,4 +341,14 @@ li button{
   display: flex;
   flex-direction: column;
 }
+.col-xs-12{
+
+   text-align: center; 
+display: flex;
+flex-direction: column;
+justify-content: center;
+
 }
+
+}
+
